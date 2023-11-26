@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(77, 77, 126); /* Set the default text color to blue */
+
+}
+
+h2{
+  padding-right: 250px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-item,
+.flex-item-checkbox {
+  width: 55%;
+  margin-bottom: 15px;
+}
+
+.flex-item-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.flex-item-checkbox input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 10px; /* Increase the margin-bottom for more space between label and input */
+}
+
+input,
+button {
+  margin-bottom: 13px;
+  margin-top: 8px;
+  padding: 16px;
+  border-radius: 4px;
+  border: 1.5px solid #ccc;
+
+}
+
+button {
+  cursor: pointer;
+  border-radius: 7px;
+  width: 130px;
+  background-color: rgb(54, 74, 97);
+  color: #fff;
+  align-self: center;
+}
