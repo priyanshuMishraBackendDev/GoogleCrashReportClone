@@ -63,14 +63,14 @@
 
 const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleusercontent.com';
 
-  document.getElementById('loginButton').addEventListener('click', () => {
-    const redirectUri = window.location.origin;
-    const scope = 'https://www.googleapis.com/auth/drive.readonly';
+  // document.getElementById('loginButton').addEventListener('click', () => {
+  //   const redirectUri = window.location.origin;
+  //   const scope = 'https://www.googleapis.com/auth/drive.readonly';
 
-    const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
-    console.log(authUrl)
-    window.location.href = authUrl;
-  });
+  //   const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
+  //   console.log(authUrl)
+  //   window.location.href = authUrl;
+  // });
 
 
 function submitForm(event) {
@@ -121,9 +121,18 @@ function submitForm(event) {
         alert('An error occurred while submitting the form. Please try again later.');
       });
   } 
-  // else {
-  //   alert('Access token not found. Please log in with Google first.');
-  // }
+
+   else {
+    // If access token not found, initiate Google login
+    const redirectUri = window.location.origin;
+    const scope = 'https://www.googleapis.com/auth/drive.readonly';
+
+    const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
+
+    // Redirect to Google login
+    window.location.href = authUrl;
+  }
+  
 }
 
 function getAccessTokenFromUrl() {
