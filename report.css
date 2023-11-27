@@ -1,0 +1,38 @@
+.bgPurple  {
+    background-color: blueviolet;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.icons {
+    height: 30%;
+    display : flex;
+    justify-content: space-between;
+    align-items: space-around;
+}
+.icons img {
+    height : 30%
+}
+
+.icons {
+    margin: 3% 5%;
+}
+
+
+ .icons button:focus{
+    outline: none;
+ }
+
+.icons button {
+    height: 30%;
+    background-color: blueviolet;
+    border-color: pink;
+    border-radius: 10%;
+    border: solid;
+    border-width: 0.1vw;
+}
+
+.lockimg {
+    height: 3%;
+}
