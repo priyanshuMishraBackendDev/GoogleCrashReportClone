@@ -97,29 +97,29 @@ function submitForm(event) {
     formData.accessToken = accessToken;
   console.log(formData)
     // Send a POST request to your server
-    // fetch('https://your-api-endpoint.com/signup', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(formData),
-    // })
-    //   .then(response => {
-    //     if (!response.ok) {
-    //       throw new Error('Network response was not ok');
-    //     }
-    //     return response.json();
-    //   })
-    //   .then(data => {
-    //     window.location.href = report.html
+    fetch('https://your-api-endpoint.com/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        window.location.href = `${window.location.origin}/report.html`
 
-    //     // Handle the response from the server, if needed
-    //     alert('Form submitted successfully!');
-    //   })
-    //   .catch(error => {
-    //     console.error('There was a problem with the fetch operation:', error);
-    //     alert('An error occurred while submitting the form. Please try again later.');
-    //   });
+        // Handle the response from the server, if needed
+        alert('Form submitted successfully!');
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        alert('An error occurred while submitting the form. Please try again later.');
+      });
   } 
   // else {
   //   alert('Access token not found. Please log in with Google first.');
