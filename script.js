@@ -57,7 +57,7 @@
 //   const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
 
 //   window.location.href = authUrl;
-});
+// });
 
 
 const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleusercontent.com';
