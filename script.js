@@ -182,7 +182,7 @@ function submitForm() {
     })
       .then(response => {
         
-        return response.json();
+       console.log(response)
       })
       .then(data => {
         window.location.href = `${window.location.origin}/report.html`
