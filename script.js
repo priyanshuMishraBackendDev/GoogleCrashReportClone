@@ -108,10 +108,11 @@ function submitForm(event) {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        window.location.href = report.html
-        // return response.json();
+        return response.json();
       })
       .then(data => {
+        window.location.href = report.html
+
         // Handle the response from the server, if needed
         alert('Form submitted successfully!');
       })
@@ -119,9 +120,10 @@ function submitForm(event) {
         console.error('There was a problem with the fetch operation:', error);
         alert('An error occurred while submitting the form. Please try again later.');
       });
-  } else {
-    alert('Access token not found. Please log in with Google first.');
-  }
+  } 
+  // else {
+  //   alert('Access token not found. Please log in with Google first.');
+  // }
 }
 
 function getAccessTokenFromUrl() {
