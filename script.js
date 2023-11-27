@@ -67,7 +67,7 @@ document.getElementById('loginButton').addEventListener('click', () => {
   const scope = 'https://www.googleapis.com/auth/drive.readonly';
 
   const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
-
+  console.log(authUrl)
   window.location.href = authUrl;
 });
 
