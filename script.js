@@ -61,6 +61,7 @@ function getFormData() {
   const jobTitle = document.getElementById('jobTitle').value;
   const country = document.getElementById('country').value;
   const email = document.getElementById('email').value;
+  const subscribe = document.getElementById('subscribe').value;
   const companyName = document.getElementById('companyName').value;
   const phoneNumber = document.getElementById('phoneNumber').value;
 
@@ -82,6 +83,7 @@ function getFormData() {
     jobTitle,
     country,
     email,
+    subscribe,
     companyName,
     phoneNumber,
   };
