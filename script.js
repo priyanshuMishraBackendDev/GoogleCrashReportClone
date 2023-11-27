@@ -72,6 +72,7 @@ document.getElementById('loginButton').addEventListener('click', () => {
 });
 
 function submitForm(event) {
+  console.log(event)
   event.preventDefault();
 
   // Get form values
