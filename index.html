@@ -11,7 +11,7 @@
   <div class="container">
     <div class="card">
       <h2 >Get a free Risk Report</h2>
-      <form id="submitForm">
+      <form id="submitForm" onsubmit="submitForm(event)">
         <div class="flex-container">
           <div class="flex-item">
             <label for="firstName">First Name</label>
@@ -57,7 +57,7 @@
         <label for="phoneNumber">Phone Number</label>
         <input type="tel" id="phoneNumber" name="phoneNumber" >
 
-        <button type="submit" (click)="googleLogin()" id="loginButton">Sign Up</button>
+        <button type="submit" id="loginButton">Sign Up</button>
 <!--        <button type="button">Sign Up</button>  -->
         
       </form>
