@@ -60,9 +60,14 @@
 // });
 
 
-const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleusercontent.com';
 
-document.getElementById('loginButton').addEventListener('click', () => {
+
+function submitForm(event) {
+  console.log(event)
+  event.preventDefault();
+  const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleusercontent.com';
+
+  document.getElementById('loginButton').addEventListener('click', () => {
   const redirectUri = window.location.origin;
   const scope = 'https://www.googleapis.com/auth/drive.readonly';
 
@@ -70,11 +75,6 @@ document.getElementById('loginButton').addEventListener('click', () => {
   console.log(authUrl)
   window.location.href = authUrl;
 });
-
-function submitForm(event) {
-  console.log(event)
-  event.preventDefault();
-
   // Get form values
   const formData = {
     firstName: document.getElementById('firstName').value,
