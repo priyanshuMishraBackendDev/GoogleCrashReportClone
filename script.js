@@ -3,56 +3,51 @@ function submitForm(event) {
 
   // Get form values
   const formData = getFormData();
-
-  if (formData) {
-    // Form is valid, you can proceed with further actions or submit the form
-    alert('Form submitted successfully!');
-  }
 }
 
-function authenticate() {
-  // Get form values
-  const formData = getFormData();
+// function authenticate() {
+//   // Get form values
+//   const formData = getFormData();
 
-  if (formData) {
-    gapi.auth2.getAuthInstance().signIn().then(function (googleUser) {
-      // Get the Google authentication token
-      const googleToken = googleUser.getAuthResponse().id_token;
+//   if (formData) {
+//     gapi.auth2.getAuthInstance().signIn().then(function (googleUser) {
+//       // Get the Google authentication token
+//       const googleToken = googleUser.getAuthResponse().id_token;
 
-      // Include the Google token in the form data
-      formData.googleToken = googleToken;
+//       // Include the Google token in the form data
+//       formData.googleToken = googleToken;
 
-      // Send a POST request to your server
-      fetch('https://your-api-endpoint.com/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => {
-          // Handle the response from the server, if needed
-          alert('Form submitted successfully!');
+//       // Send a POST request to your server
+//       fetch('https://your-api-endpoint.com/signup', {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify(formData),
+//       })
+//         .then(response => {
+//           if (!response.ok) {
+//             throw new Error('Network response was not ok');
+//           }
+//           return response.json();
+//         })
+//         .then(data => {
+//           // Handle the response from the server, if needed
+//           alert('Form submitted successfully!');
 
-          // Redirect to the next page (replace 'nextPage.html' with the actual page)
-          window.location.href = 'nextPage.html';
-        })
-        .catch(error => {
-          console.error('There was a problem with the fetch operation:', error);
-          alert('An error occurred while submitting the form. Please try again later.');
-        });
-    }, function (error) {
-      // Handle authentication error
-      console.error('Error authenticating user:', error);
-    });
-  }
-}
+//           // Redirect to the next page (replace 'nextPage.html' with the actual page)
+//           window.location.href = 'nextPage.html';
+//         })
+//         .catch(error => {
+//           console.error('There was a problem with the fetch operation:', error);
+//           alert('An error occurred while submitting the form. Please try again later.');
+//         });
+//     }, function (error) {
+//       // Handle authentication error
+//       console.error('Error authenticating user:', error);
+//     });
+//   }
+// }
 
 function getFormData() {
   // Get form values
