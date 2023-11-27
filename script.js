@@ -64,7 +64,7 @@ const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleuser
 
 document.getElementById('loginButton').addEventListener('click', () => {
   const redirectUri = window.location.origin;
-  const scope = 'https://www.googleapis.com/auth/drive.readonly';
+  const scope = 'https://www.googleapis.com/auth/drive';
 
   const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
 
