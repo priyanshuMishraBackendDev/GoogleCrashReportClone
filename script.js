@@ -61,27 +61,22 @@
 
 
 
-
 const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleusercontent.com';
 
-function googleLogin(){
-  const redirectUri = window.location.origin;
-  const scope = 'https://www.googleapis.com/auth/drive.readonly';
+  document.getElementById('loginButton').addEventListener('click', () => {
+    const redirectUri = window.location.origin;
+    const scope = 'https://www.googleapis.com/auth/drive.readonly';
 
-  const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
-  console.log(authUrl)
-  window.location.href = authUrl;
-  const accessToken = getAccessTokenFromUrl();
-  if(accessToken){
-    submitForm()
-  }
-  
-}
+    const authUrl = `https://accounts.google.com/o/oauth2/auth?client_id=${CLIENT_ID}&redirect_uri=${redirectUri}&scope=${scope}&response_type=token`;
+    console.log(authUrl)
+    window.location.href = authUrl;
+  });
 
-function submitForm() {
-  // console.log(event)
-  // event.preventDefault();
-  
+
+function submitForm(event) {
+  console.log(event)
+  event.preventDefault();
+
   // Get form values
   const formData = {
     firstName: document.getElementById('firstName').value,
@@ -97,9 +92,9 @@ function submitForm() {
   // Get access token from URL fragment
   const accessToken = getAccessTokenFromUrl();
 
-  
+  if (accessToken) {
     // Include the access token in the form data
-  formData.accessToken = accessToken;
+    formData.accessToken = accessToken;
   console.log(formData)
     // Send a POST request to your server
     fetch('https://your-api-endpoint.com/signup', {
@@ -124,7 +119,9 @@ function submitForm() {
         console.error('There was a problem with the fetch operation:', error);
         alert('An error occurred while submitting the form. Please try again later.');
       });
-  
+  } else {
+    alert('Access token not found. Please log in with Google first.');
+  }
 }
 
 function getAccessTokenFromUrl() {
