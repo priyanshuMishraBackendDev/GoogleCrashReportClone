@@ -281,18 +281,18 @@ function getAccessTokenFromUrl() {
     let formData = formDataString ? JSON.parse(formDataString) : {};
    formData.googleToken = accessToken 
      console.log(formData)
-//    fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
-//                 method: 'POST',
-//                mode: 'no-cors',
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                 },
-//                 body: formData,
-//             }).then((result)=>{
-//           console.log(result)
-//             }).catch((err)=>{
-//             console.log("error",err)
-// })
+   fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
+                method: 'POST',
+               mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: formData,
+            }).then((result)=>{
+          console.log(result)
+            }).catch((err)=>{
+            console.log("error",err)
+})
   }
 }
 
