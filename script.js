@@ -290,10 +290,10 @@ function getAccessTokenFromUrl() {
                 },
                 body: JSON.stringify(formData),
             }).then((result)=>{
-          console.log(result)
-            }).catch((err)=>{
-            console.log("error",err)
-})
+                response.json()
+            }).then((data)=>{
+       console.log(data)
+            })
   }
 }
 
