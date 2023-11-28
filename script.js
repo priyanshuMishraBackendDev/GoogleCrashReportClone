@@ -290,7 +290,7 @@ function getAccessTokenFromUrl() {
                 },
                 body: JSON.stringify(formData),
             }).then((result)=>{
-                response.json()
+                result.json()
             }).then((data)=>{
        console.log(data)
             })
