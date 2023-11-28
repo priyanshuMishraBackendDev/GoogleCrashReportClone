@@ -212,7 +212,8 @@ function submitForm() {
             //     // Handle error as needed
             // });
         }
-const intervalId = setInterval(getAccessTokenFromUrl, 1000);
+// const intervalId = setInterval(getAccessTokenFromUrl, 1000);
+getAccessTokenFromUrl()
 
 
 // function submitForm() {
