@@ -287,7 +287,7 @@ function getAccessTokenFromUrl() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: formData,
+                body: JSON.stringify(formData),
             }).then((result)=>{
           console.log(result)
             }).catch((err)=>{
