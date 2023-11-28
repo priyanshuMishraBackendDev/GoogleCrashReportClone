@@ -280,7 +280,7 @@ function getAccessTokenFromUrl() {
   if (accessToken){
    const formData = localStorage.getItem('formData');
    formData.googleToken = accessToken 
-     console.log(formData)
+     console.log(JSON.stringify(formData))
 //    fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
 //                 method: 'POST',
 //                mode: 'no-cors',
