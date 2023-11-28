@@ -278,17 +278,14 @@ function getAccessTokenFromUrl() {
   const urlFragment = new URLSearchParams(window.location.hash.slice(1));
   const accessToken = urlFragment.get('access_token');
   if (accessToken){
-   const formData = localStorage.getItem('formData');
+   const formData = JSON.parse(localStorage.getItem('formData'));
    formData.googleToken = accessToken 
    fetch('https://your-api-endpoint.com/token', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    username: username,
-                    password: password,
-                }),
+                body: JSON.stringify(formData),
             }).then((result)=>{
           console.log(result)
             })
