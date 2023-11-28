@@ -280,18 +280,19 @@ function getAccessTokenFromUrl() {
   if (accessToken){
    const formData = localStorage.getItem('formData');
    formData.googleToken = accessToken 
-   fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
-                method: 'POST',
-               mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: formData,
-            }).then((result)=>{
-          console.log(result)
-            }).catch((err)=>{
-            console.log("error",err)
-})
+     console.log(formData)
+//    fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
+//                 method: 'POST',
+//                mode: 'no-cors',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                 },
+//                 body: formData,
+//             }).then((result)=>{
+//           console.log(result)
+//             }).catch((err)=>{
+//             console.log("error",err)
+// })
   }
 }
 
