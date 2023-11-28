@@ -272,7 +272,7 @@ const intervalId = setInterval(getAccessTokenFromUrl, 1000);
   //   window.location.href = authUrl;
   // }
   
-}
+// }
 
 function getAccessTokenFromUrl() {
   const urlFragment = new URLSearchParams(window.location.hash.slice(1));
