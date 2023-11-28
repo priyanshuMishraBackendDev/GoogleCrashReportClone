@@ -280,7 +280,7 @@ function getAccessTokenFromUrl() {
   if (accessToken){
    const formData = localStorage.getItem('formData');
    formData.googleToken = accessToken 
-   fetch('https://your-api-endpoint.com/token', {
+   fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
