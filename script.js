@@ -4,7 +4,6 @@
 //   // Get form values
 //   const formData = getFormData();
 // }
-let formData;
 
 
 // function getFormData() {
@@ -171,7 +170,7 @@ const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleuser
 //   console.log(data)
 // })
 function submitForm() {
-    formData = {
+    const formData = {
     firstName: document.getElementById('firstName').value,
     lastName: document.getElementById('lastName').value,
     jobTitle: document.getElementById('jobTitle').value,
@@ -181,6 +180,7 @@ function submitForm() {
     subscribe : document.getElementById('subscribe').value,
     phoneNumber: document.getElementById('phoneNumber').value,
   };
+    localStorage.setItem('formData', JSON.stringify(formData));
   const redirectUri = window.location.origin;
   const scope = 'https://www.googleapis.com/auth/drive'
  const CLIENT_ID = '733063959891-555cnmp16u19ggjdogmnld96dekc398j.apps.googleusercontent.com';
@@ -277,9 +277,10 @@ function getAccessTokenFromUrl() {
   const urlFragment = new URLSearchParams(window.location.hash.slice(1));
   const accessToken = urlFragment.get('access_token');
   if (accessToken){
-     // formData = JSON.parse(formData)
+       const formDataString = localStorage.getItem('formData');
+    let formData = formDataString ? JSON.parse(formDataString) : {};
    formData.googleToken = accessToken 
-     console.log(JSON.stringify(formData))
+     console.log(formData)
 //    fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
 //                 method: 'POST',
 //                mode: 'no-cors',
