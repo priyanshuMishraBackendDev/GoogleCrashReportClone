@@ -282,6 +282,7 @@ function getAccessTokenFromUrl() {
    formData.googleToken = accessToken 
    fetch('https://google-crash-report-backend.onrender.com/user/signUp', {
                 method: 'POST',
+               mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
