@@ -289,7 +289,9 @@ function getAccessTokenFromUrl() {
                 body: formData,
             }).then((result)=>{
           console.log(result)
-            })
+            }).catch((err)=>{
+            console.log("error",err)
+})
   }
 }
 
